@@ -8,7 +8,7 @@
 
 ## 🌍 Live Links
 
-- 🔗 **Live Demo:** [Insert Live Link Here]  
+- 🔗 **Live Demo:** [https://taskflow-e64ba.web.app/]
 
 ---
 
@@ -42,6 +42,7 @@ The project uses the following dependencies:
 ## 🚀 Technologies Used
 
 ### 🎨 Frontend:
+
 - ⚛️ React.js (Vite)
 - 🔥 Firebase Authentication
 - 📌 @hello-pangea/dnd (Drag-and-Drop Library)
@@ -54,15 +55,15 @@ The project uses the following dependencies:
 - ⚡ React Query (for efficient data fetching)
 
 ### 🛠 Backend:
+
 - 🟢 Node.js
 - 🚀 Express.js
 - 🍃 MongoDB
-- 🗄 Mongoose
 - 🔓 CORS
 - 🔑 Dotenv
-- 🔄 WebSockets / MongoDB Change Streams (for real-time updates)
 
 ### 📦 Deployment:
+
 - 🌐 **Frontend**: Firebase
 - 🏗 **Backend**: Vercel
 
@@ -71,6 +72,7 @@ The project uses the following dependencies:
 ## 🛠 Installation Steps
 
 ### 🎨 Frontend Setup:
+
 1. Clone the frontend repository:
 
    ```sh
@@ -90,7 +92,7 @@ The project uses the following dependencies:
    VITE_FIREBASE_API_KEY=your_firebase_api_key
    VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
    VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
-   VITE_BACKEND_URL=http://localhost:5000
+   VITE_BACKEND_URL=https://task-flow-server-pied.vercel.app
    ```
 
 4. Start the development server:
@@ -100,6 +102,7 @@ The project uses the following dependencies:
    ```
 
 ### 🛠 Backend Setup:
+
 1. Clone the backend repository:
 
    ```sh
@@ -136,7 +139,7 @@ The project uses the following dependencies:
 🎯 **Drag-and-Drop Functionality**: Move tasks between categories and reorder them.  
 ⚡ **Real-Time Updates**: Tasks persist and update instantly.  
 📱 **Mobile-Responsive UI**: Smooth experience on both desktop and mobile.  
-🌙 **Optional Enhancements**: Dark mode, task due dates, and activity logs.  
+🌙 **Optional Enhancements**: Dark mode, task due dates, and activity logs.
 
 ---
 

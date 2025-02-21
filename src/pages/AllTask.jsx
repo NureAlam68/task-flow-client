@@ -20,7 +20,7 @@ const AllTask = () => {
     queryKey: ["tasks"],
     queryFn: async () => {
       const res = await axios.get(
-        `http://localhost:5000/tasks?email=${user.email}`
+        `https://task-flow-server-pied.vercel.app/tasks?email=${user.email}`
       );
       return res.data;
     },
@@ -49,7 +49,7 @@ const AllTask = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/tasks/${taskId}`)
+          .delete(`https://task-flow-server-pied.vercel.app/tasks/${taskId}`)
           .then((res) => {
             refetch();
             if (res.data.deletedCount > 0) {
@@ -100,9 +100,12 @@ const AllTask = () => {
       setAllTask([...otherTasks, ...sourceTasks, ...destinationTasks]);
 
       try {
-        await axios.put(`http://localhost:5000/tasks/${draggableId}`, {
-          category: destination.droppableId,
-        });
+        await axios.put(
+          `https://task-flow-server-pied.vercel.app/tasks/${draggableId}`,
+          {
+            category: destination.droppableId,
+          }
+        );
         refetch();
       } catch (error) {
         console.error("Error updating task category:", error);

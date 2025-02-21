@@ -1,40 +1,41 @@
-import { useContext, useState } from 'react';
-import axios from 'axios';
-import Swal from 'sweetalert2';
-import { ClipboardList, Clock, CheckCircle2, PlusCircle } from 'lucide-react';
-import { AuthContext } from '../provider/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { ClipboardList, Clock, CheckCircle2, PlusCircle } from "lucide-react";
+import { AuthContext } from "../provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const AddTask = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [category, setCategory] = useState('To-Do');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("To-Do");
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!title) return;
-    setTitle('');
-    setDescription('');
-    setCategory('To-Do');
+    setTitle("");
+    setDescription("");
+    setCategory("To-Do");
 
     const newTask = {
       email: user.email,
       title,
       description,
       timestamp: new Date().toISOString(),
-      category
+      category,
     };
     console.log(newTask);
-    axios.post('http://localhost:5000/tasks', newTask)
-      .then(res => {
+    axios
+      .post("https://task-flow-server-pied.vercel.app/tasks", newTask)
+      .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {
           Swal.fire({
             title: "Task added successfully!",
             icon: "success",
-            draggable: true
+            draggable: true,
           });
           navigate("/tasks");
         }
@@ -43,11 +44,11 @@ const AddTask = () => {
 
   const getCategoryIcon = (cat) => {
     switch (cat) {
-      case 'To-Do':
+      case "To-Do":
         return <ClipboardList className="w-5 h-5" />;
-      case 'In Progress':
+      case "In Progress":
         return <Clock className="w-5 h-5" />;
-      case 'Done':
+      case "Done":
         return <CheckCircle2 className="w-5 h-5" />;
       default:
         return <ClipboardList className="w-5 h-5" />;
