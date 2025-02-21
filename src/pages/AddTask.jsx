@@ -1,12 +1,16 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import { ClipboardList, Clock, CheckCircle2, PlusCircle } from 'lucide-react';
+import { AuthContext } from '../provider/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const AddTask = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('To-Do');
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +20,7 @@ const AddTask = () => {
     setCategory('To-Do');
 
     const newTask = {
+      email: user.email,
       title,
       description,
       timestamp: new Date().toISOString(),
@@ -31,6 +36,7 @@ const AddTask = () => {
             icon: "success",
             draggable: true
           });
+          navigate("/tasks");
         }
       });
   };

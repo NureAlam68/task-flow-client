@@ -1,7 +1,8 @@
 import { useState, useContext } from "react";
 import { Menu, X, Layout } from "lucide-react";
 import { AuthContext } from "../provider/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,26 +31,26 @@ function Navbar() {
             <div className="flex gap-10">
               {/* Desktop Navigation */}
               <div className="hidden sm:ml-8 sm:flex sm:space-x-8">
-                <Link
+                <NavLink
                   to="/"
                   className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-transparent hover:border-indigo-600 transition-colors duration-200"
                 >
                   Home
-                </Link>
+                </NavLink>
                 {user && (
                   <>
-                    <Link
+                    <NavLink
                       to="/tasks"
                       className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-transparent hover:border-indigo-600 transition-colors duration-200"
                     >
                       Tasks
-                    </Link>
-                    <Link
+                    </NavLink>
+                    <NavLink
                       to="/addTask"
                       className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-transparent hover:border-indigo-600 transition-colors duration-200"
                     >
                       Add Task
-                    </Link>
+                    </NavLink>
                   </>
                 )}
               </div>
@@ -93,26 +94,26 @@ function Navbar() {
         {/* Mobile menu */}
         <div className={`sm:hidden ${isOpen ? "block" : "hidden"}`}>
           <div className="pt-2 pb-3 space-y-1">
-            <Link
+            <NavLink
               to="/"
               className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-transparent hover:border-indigo-600 transition-colors duration-200"
             >
               Home
-            </Link>
+            </NavLink>
             {user && (
               <>
-                <Link
+                <NavLink
                   to="/tasks"
                   className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-indigo-500 transition-colors duration-200"
                 >
                   Tasks
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to="/addTask"
                   className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-indigo-500 transition-colors duration-200"
                 >
                   Add Task
-                </Link>
+                </NavLink>
               </>
             )}
             {user ? (

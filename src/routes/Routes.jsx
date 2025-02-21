@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import AddTask from "../pages/AddTask";
 import AllTask from "../pages/AllTask";
+import UpdateTask from "../pages/UpdateTask";
 
 
 export const router = createBrowserRouter([
@@ -26,7 +27,12 @@ export const router = createBrowserRouter([
       {
         path: "/tasks",
         element: <AllTask></AllTask>
-      }
+      },
+      {
+        path: '/updateTask/:id',
+        element: <UpdateTask></UpdateTask>,
+        loader: ({ params }) => fetch(`http://localhost:5000/tasks/${params.id}`)
+      },
     ],
   },
 ]);

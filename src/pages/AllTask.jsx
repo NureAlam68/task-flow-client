@@ -1,18 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { Loader2, Pencil, Trash2, GripVertical } from 'lucide-react';
+import { AuthContext } from "../provider/AuthProvider";
 
 const AllTask = () => {
   const navigate = useNavigate();
+  const {user} = useContext(AuthContext);
 
   const { data: tasks = [], refetch, isLoading } = useQuery({
     queryKey: ["tasks"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/tasks");
+      const res = await axios.get(`http://localhost:5000/tasks?email=${user.email}`);
       return res.data;
     },
   });
@@ -24,7 +26,6 @@ const AllTask = () => {
   }, [tasks]);
 
   const handleUpdate = (taskId) => {
-    console.log(`Update task with ID: ${taskId}`);
     navigate(`/updateTask/${taskId}`);
   };
 
