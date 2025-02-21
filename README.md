@@ -1,8 +1,146 @@
-# React + Vite
+# 📌 TaskFlow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📝 Introduction
 
-Currently, two official plugins are available:
+**TaskFlow** is a modern and minimalistic **Task Management Application** where users can **add, edit, delete, and reorder tasks** using a **drag-and-drop** interface. The app categorizes tasks into **To-Do, In Progress, and Done**, ensuring **real-time updates** and **persistent storage with MongoDB**. Only **authenticated users** can access the app using **Firebase Authentication**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## 🌍 Live Links
+
+- 🔗 **Live Demo:** [Insert Live Link Here]  
+
+---
+
+## 📦 Dependencies
+
+The project uses the following dependencies:
+
+```json
+"dependencies": {
+    "@hello-pangea/dnd": "^18.0.1",
+    "@tanstack/react-query": "^5.66.8",
+    "axios": "^1.7.9",
+    "date-fns": "^4.1.0",
+    "firebase": "^11.3.1",
+    "localforage": "^1.10.0",
+    "lucide-react": "^0.475.0",
+    "match-sorter": "^8.0.0",
+    "moment": "^2.30.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.2.0",
+    "sort-by": "^1.2.0",
+    "sweetalert2": "^11.17.2"
+}
+🎨 Frontend:
+⚛️ React.js (Vite)
+🔥 Firebase Authentication
+📌 @hello-pangea/dnd (Drag-and-Drop Library)
+🛤 React Router
+🎨 Tailwind CSS
+🔗 Axios (for API calls)
+🍞 React Hot Toast (for notifications)
+📅 Date-fns & Moment.js (for date handling)
+🎨 Lucide-react & React Icons (for UI icons)
+⚡ React Query (for efficient data fetching)
+🛠 Backend:
+🟢 Node.js
+🚀 Express.js
+🍃 MongoDB
+🗄 Mongoose
+🔓 CORS
+🔑 Dotenv
+🔄 WebSockets / MongoDB Change Streams (for real-time updates)
+🛠 Installation Steps
+🎨 Frontend Setup:
+Clone the frontend repository:
+
+sh
+Copy
+Edit
+git clone [Insert Frontend Repo Link]
+cd frontend
+Install dependencies:
+
+sh
+Copy
+Edit
+npm install
+Set up environment variables (.env file):
+
+plaintext
+Copy
+Edit
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
+VITE_BACKEND_URL=http://localhost:5000
+Start the development server:
+
+sh
+Copy
+Edit
+npm run dev
+🛠 Backend Setup:
+Clone the backend repository:
+
+sh
+Copy
+Edit
+git clone [Insert Backend Repo Link]
+cd backend
+Install dependencies:
+
+sh
+Copy
+Edit
+npm install
+Set up environment variables (.env file):
+
+plaintext
+Copy
+Edit
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+JWT_SECRET=your_jwt_secret
+Start the backend server:
+
+sh
+Copy
+Edit
+nodemon index.js
+🚀 Technologies Used
+Frontend:
+⚛️ React.js (Vite)
+🎨 Tailwind CSS
+🔥 Firebase Authentication
+📌 @hello-pangea/dnd
+📅 Date-fns & Moment.js
+🍞 React Hot Toast
+🔗 Axios
+Backend:
+🟢 Node.js
+🚀 Express.js
+🍃 MongoDB
+🗄 Mongoose
+🔄 WebSockets / MongoDB Change Streams
+Deployment:
+🌐 Frontend: Firebase
+🏗 Backend: Vercel
+🌟 Features
+✅ User Authentication: Secure login with Firebase Authentication (Google Sign-In).
+📝 Task Management: Add, edit, delete, and reorder tasks.
+🎯 Drag-and-Drop Functionality: Move tasks between categories and reorder them.
+⚡ Real-Time Updates: Tasks persist and update instantly.
+📱 Mobile-Responsive UI: Smooth experience on both desktop and mobile.
+🌙 Optional Enhancements: Dark mode, task due dates, and activity logs.
+
+🤝 Contributing
+Contributions are welcome! 🚀
+Feel free to fork the repository and submit pull requests with improvements or bug fixes.
+
+💡 Developed By
+Developed with ❤️ by Nure Alam 🚀
