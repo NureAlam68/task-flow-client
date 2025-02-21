@@ -5,7 +5,7 @@ import Login from "../pages/Login";
 import AddTask from "../pages/AddTask";
 import AllTask from "../pages/AllTask";
 import UpdateTask from "../pages/UpdateTask";
-
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -22,16 +22,29 @@ export const router = createBrowserRouter([
       },
       {
         path: "/addTask",
-        element: <AddTask></AddTask>,
+        element: (
+          <PrivateRoute>
+            <AddTask></AddTask>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/tasks",
-        element: <AllTask></AllTask>
+        element: (
+          <PrivateRoute>
+            <AllTask></AllTask>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/updateTask/:id',
-        element: <UpdateTask></UpdateTask>,
-        loader: ({ params }) => fetch(`http://localhost:5000/tasks/${params.id}`)
+        path: "/updateTask/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateTask></UpdateTask>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/tasks/${params.id}`),
       },
     ],
   },
