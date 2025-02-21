@@ -35,112 +35,118 @@ The project uses the following dependencies:
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.17.2"
 }
-🎨 Frontend:
-⚛️ React.js (Vite)
-🔥 Firebase Authentication
-📌 @hello-pangea/dnd (Drag-and-Drop Library)
-🛤 React Router
-🎨 Tailwind CSS
-🔗 Axios (for API calls)
-🍞 React Hot Toast (for notifications)
-📅 Date-fns & Moment.js (for date handling)
-🎨 Lucide-react & React Icons (for UI icons)
-⚡ React Query (for efficient data fetching)
-🛠 Backend:
-🟢 Node.js
-🚀 Express.js
-🍃 MongoDB
-🗄 Mongoose
-🔓 CORS
-🔑 Dotenv
-🔄 WebSockets / MongoDB Change Streams (for real-time updates)
-🛠 Installation Steps
-🎨 Frontend Setup:
-Clone the frontend repository:
+```
 
-sh
-Copy
-Edit
-git clone [Insert Frontend Repo Link]
-cd frontend
-Install dependencies:
+---
 
-sh
-Copy
-Edit
-npm install
-Set up environment variables (.env file):
+## 🚀 Technologies Used
 
-plaintext
-Copy
-Edit
-VITE_FIREBASE_API_KEY=your_firebase_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
-VITE_BACKEND_URL=http://localhost:5000
-Start the development server:
+### 🎨 Frontend:
+- ⚛️ React.js (Vite)
+- 🔥 Firebase Authentication
+- 📌 @hello-pangea/dnd (Drag-and-Drop Library)
+- 🛤 React Router
+- 🎨 Tailwind CSS
+- 🔗 Axios (for API calls)
+- 🍞 React Hot Toast (for notifications)
+- 📅 Date-fns & Moment.js (for date handling)
+- 🎨 Lucide-react & React Icons (for UI icons)
+- ⚡ React Query (for efficient data fetching)
 
-sh
-Copy
-Edit
-npm run dev
-🛠 Backend Setup:
-Clone the backend repository:
+### 🛠 Backend:
+- 🟢 Node.js
+- 🚀 Express.js
+- 🍃 MongoDB
+- 🗄 Mongoose
+- 🔓 CORS
+- 🔑 Dotenv
+- 🔄 WebSockets / MongoDB Change Streams (for real-time updates)
 
-sh
-Copy
-Edit
-git clone [Insert Backend Repo Link]
-cd backend
-Install dependencies:
+### 📦 Deployment:
+- 🌐 **Frontend**: Firebase
+- 🏗 **Backend**: Vercel
 
-sh
-Copy
-Edit
-npm install
-Set up environment variables (.env file):
+---
 
-plaintext
-Copy
-Edit
-MONGO_URI=your_mongodb_connection_string
-PORT=5000
-JWT_SECRET=your_jwt_secret
-Start the backend server:
+## 🛠 Installation Steps
 
-sh
-Copy
-Edit
-nodemon index.js
-🚀 Technologies Used
-Frontend:
-⚛️ React.js (Vite)
-🎨 Tailwind CSS
-🔥 Firebase Authentication
-📌 @hello-pangea/dnd
-📅 Date-fns & Moment.js
-🍞 React Hot Toast
-🔗 Axios
-Backend:
-🟢 Node.js
-🚀 Express.js
-🍃 MongoDB
-🗄 Mongoose
-🔄 WebSockets / MongoDB Change Streams
-Deployment:
-🌐 Frontend: Firebase
-🏗 Backend: Vercel
-🌟 Features
-✅ User Authentication: Secure login with Firebase Authentication (Google Sign-In).
-📝 Task Management: Add, edit, delete, and reorder tasks.
-🎯 Drag-and-Drop Functionality: Move tasks between categories and reorder them.
-⚡ Real-Time Updates: Tasks persist and update instantly.
-📱 Mobile-Responsive UI: Smooth experience on both desktop and mobile.
-🌙 Optional Enhancements: Dark mode, task due dates, and activity logs.
+### 🎨 Frontend Setup:
+1. Clone the frontend repository:
 
-🤝 Contributing
-Contributions are welcome! 🚀
+   ```sh
+   git clone [Insert Frontend Repo Link]
+   cd frontend
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Set up environment variables (`.env` file):
+
+   ```plaintext
+   VITE_FIREBASE_API_KEY=your_firebase_api_key
+   VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+   VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
+   VITE_BACKEND_URL=http://localhost:5000
+   ```
+
+4. Start the development server:
+
+   ```sh
+   npm run dev
+   ```
+
+### 🛠 Backend Setup:
+1. Clone the backend repository:
+
+   ```sh
+   git clone [Insert Backend Repo Link]
+   cd backend
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Set up environment variables (`.env` file):
+
+   ```plaintext
+   MONGO_URI=your_mongodb_connection_string
+   PORT=5000
+   JWT_SECRET=your_jwt_secret
+   ```
+
+4. Start the backend server:
+
+   ```sh
+   nodemon index.js
+   ```
+
+---
+
+## 🌟 Features
+
+✅ **User Authentication**: Secure login with Firebase Authentication (Google Sign-In).  
+📝 **Task Management**: Add, edit, delete, and reorder tasks.  
+🎯 **Drag-and-Drop Functionality**: Move tasks between categories and reorder them.  
+⚡ **Real-Time Updates**: Tasks persist and update instantly.  
+📱 **Mobile-Responsive UI**: Smooth experience on both desktop and mobile.  
+🌙 **Optional Enhancements**: Dark mode, task due dates, and activity logs.  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! 🚀  
 Feel free to fork the repository and submit pull requests with improvements or bug fixes.
 
-💡 Developed By
-Developed with ❤️ by Nure Alam 🚀
+---
+
+## 💡 Developed By
+
+Developed with ❤️ by **Nure Alam** 🚀
