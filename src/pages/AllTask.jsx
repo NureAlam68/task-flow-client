@@ -3,18 +3,25 @@ import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import Swal from "sweetalert2";
+import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
-import { Loader2, Pencil, Trash2, GripVertical } from 'lucide-react';
+import { Loader2, Pencil, Trash2, GripVertical } from "lucide-react";
 import { AuthContext } from "../provider/AuthProvider";
 
 const AllTask = () => {
   const navigate = useNavigate();
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
-  const { data: tasks = [], refetch, isLoading } = useQuery({
+  const {
+    data: tasks = [],
+    refetch,
+    isLoading,
+  } = useQuery({
     queryKey: ["tasks"],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/tasks?email=${user.email}`);
+      const res = await axios.get(
+        `http://localhost:5000/tasks?email=${user.email}`
+      );
       return res.data;
     },
   });
@@ -104,26 +111,25 @@ const AllTask = () => {
   };
 
   const categories = [
-    { 
-      name: "To-Do", 
-      bgClass: "bg-white", 
+    {
+      name: "To-Do",
+      bgClass: "bg-white",
       headerClass: "border-l-4 border-r-4 border-red-400",
-      count: allTask.filter(task => task.category === "To-Do").length 
+      count: allTask.filter((task) => task.category === "To-Do").length,
     },
-    { 
-      name: "In Progress", 
-      bgClass: "bg-white", 
+    {
+      name: "In Progress",
+      bgClass: "bg-white",
       headerClass: "border-l-4 border-r-4 border-blue-400",
-      count: allTask.filter(task => task.category === "In Progress").length 
+      count: allTask.filter((task) => task.category === "In Progress").length,
     },
-    { 
-      name: "Done", 
-      bgClass: "bg-white", 
+    {
+      name: "Done",
+      bgClass: "bg-white",
       headerClass: "border-l-4 border-r-4 border-green-400",
-      count: allTask.filter(task => task.category === "Done").length 
+      count: allTask.filter((task) => task.category === "Done").length,
     },
   ];
-  
 
   if (isLoading) {
     return (
@@ -148,15 +154,19 @@ const AllTask = () => {
             <Droppable key={column.name} droppableId={column.name}>
               {(provided) => (
                 <div className="flex flex-col h-full">
-                  <div className={`p-4 rounded-t-lg ${column.headerClass} bg-white shadow-sm`}>
+                  <div
+                    className={`p-4 rounded-t-lg ${column.headerClass} bg-white shadow-sm`}
+                  >
                     <div className="flex items-center justify-between">
-                      <h2 className="text-lg font-semibold text-gray-700">{column.name}</h2>
+                      <h2 className="text-lg font-semibold text-gray-700">
+                        {column.name}
+                      </h2>
                       <span className="px-2 py-1 text-sm font-medium bg-gray-100 rounded-full">
                         {column.count}
                       </span>
                     </div>
                   </div>
-                  
+
                   <div
                     className="flex-1 p-2 bg-indigo-950 rounded-b-lg min-h-screen"
                     ref={provided.innerRef}
@@ -175,7 +185,7 @@ const AllTask = () => {
                               ref={provided.innerRef}
                               {...provided.draggableProps}
                               className={`rounded-lg shadow-sm p-4 mb-3 border border-gray-100 transition-all ${
-                                snapshot.isDragging ? 'shadow-lg rotate-2' : ''
+                                snapshot.isDragging ? "shadow-lg rotate-2" : ""
                               }min-h-[100px] h-auto overflow-hidden break-words`}
                             >
                               <div className="flex items-start gap-2">
@@ -191,6 +201,9 @@ const AllTask = () => {
                                   </h3>
                                   <p className="text-sm text-gray-300 mb-3">
                                     {task.description}
+                                  </p>
+                                  <p className="text-sm text-gray-300 mb-3">
+                                    {format(new Date(task.timestamp), "PPpp")}
                                   </p>
                                   <div className="flex items-center gap-2">
                                     <button
