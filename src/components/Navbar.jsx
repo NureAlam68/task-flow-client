@@ -29,14 +29,14 @@ function Navbar() {
              <div className="hidden sm:ml-8 sm:flex sm:space-x-8">
                 {user && (
                   <>
-                    <a href="/tasks" 
+                    <Link to="/tasks" 
                        className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-transparent hover:border-indigo-600 transition-colors duration-200">
                       Tasks
-                    </a>
-                    <a href="/addTask"
+                    </Link>
+                    <Link to="/addTask"
                        className="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-900 border-b-2 border-transparent hover:border-indigo-600 transition-colors duration-200">
                       Add Task
-                    </a>
+                    </Link>
                   </>
                 )}
               </div>
@@ -83,18 +83,18 @@ function Navbar() {
           <div className="pt-2 pb-3 space-y-1">
             {user && (
               <>
-                <a
-                  href="/tasks"
+                <Link
+                  to="/tasks"
                   className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-indigo-500 transition-colors duration-200"
                 >
                   Tasks
-                </a>
-                <a
-                  href="/addTask"
+                </Link>
+                <Link
+                  to="/addTask"
                   className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-indigo-500 transition-colors duration-200"
                 >
                   Add Task
-                </a>
+                </Link>
               </>
             )}
             {user ? (
